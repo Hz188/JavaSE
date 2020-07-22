@@ -1,6 +1,5 @@
-package test;
+package B_反射.test;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -19,7 +18,7 @@ import java.util.Properties;
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         //原先
-//        Student s = new Student();
+//        B_反射.Student s = new B_反射.Student();
 //        s.love();
 //        Teacher t = new Teacher();
 //        t.love();
@@ -28,7 +27,7 @@ public class Test {
         //via reflection
         //load key-value data
         Properties prop = new Properties();
-        FileReader fr = new FileReader("Reflection\\src\\test\\class.txt");
+        FileReader fr = new FileReader("Reflection\\src\\B_反射\\test\\class.txt");
         prop.load(fr);
         fr.close();
         //get data
@@ -36,8 +35,8 @@ public class Test {
         String methodName = prop.getProperty("methodName");
 
         //reflection
-        Class c = Class.forName("test." + className);
-        Constructor constructor = c.getConstructor();
+        Class<?> c = Class.forName("B_反射.test." + className);
+        Constructor<?> constructor = c.getConstructor();
         Object o = constructor.newInstance();
         Method m = c.getDeclaredMethod(methodName);
         m.setAccessible(true);

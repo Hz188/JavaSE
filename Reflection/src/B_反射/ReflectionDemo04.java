@@ -1,18 +1,20 @@
+package B_反射;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * 通过反射获取变量并使用
  */
 public class ReflectionDemo04 {
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InstantiationException, InvocationTargetException {
         //1.get .class file object
-        Class c = Class.forName("Person");
+        Class<?> c = Class.forName("B_反射.Student");
 
         //通过无参构造
-        Constructor cons = c.getConstructor();
-        Object obj = c.newInstance();
+        Constructor<?> cons = c.getConstructor();
+        Object obj = cons.newInstance();
         System.out.println(obj);
         //2.get fields
 //        Field[] fileds1 = c.getFields(); // public field

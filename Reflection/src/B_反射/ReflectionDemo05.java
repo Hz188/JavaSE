@@ -1,3 +1,4 @@
+package B_反射;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -10,11 +11,11 @@ public class ReflectionDemo05 {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException,
             IllegalAccessException, InstantiationException, InvocationTargetException {
         //1.get .class file object
-        Class c = Class.forName("Person");
+        Class<?> c = Class.forName("B_反射.Student");
 
         //通过无参构造
-        Constructor cons = c.getConstructor();
-        Object obj = c.newInstance();
+        Constructor<?> cons = c.getConstructor();
+        Object obj = cons.newInstance();
 
         //2. get methods
         //2.1 All methods

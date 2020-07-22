@@ -1,38 +1,42 @@
+package B_反射;
 
-public class Person {
+public class Student {
     private String name;
     int age;
     public String address;
 
-    public Person() {
+    public Student() {
     }
-    private Person(String name){
+
+    private Student(String name) {
         this.name = name;
     }
-    Person(String name, int age) {
+
+    Student(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Person(String name, int age, String address) {
+    public Student(String name, int age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
     }
 
-    public void show(){
+    private void function() {
+        System.out.println("function");
+    }
+
+    public void show() {
         System.out.println("show");
     }
-    public void method(String s){
+
+    public void method(String s) {
         System.out.println("method" + s);
     }
 
-    public String getString(String s, int i){
+    public String getString(String s, int i) {
         return s + "---" + i;
-    }
-
-    private void function(){
-        System.out.println("function");
     }
 
     @Override
