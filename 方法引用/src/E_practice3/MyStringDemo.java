@@ -7,7 +7,7 @@ public class MyStringDemo {
 
         //2.
         useMyString(String::substring);
-        //Lambda表达式被类的实例方法替代是偶
+        //Lambda表达式被类的实例方法替代时候
         //第一个参数作为调用者
         //后面的参数全部传递给该方法作为参数
     }
