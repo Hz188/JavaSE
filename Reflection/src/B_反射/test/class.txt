@@ -1,2 +1,0 @@
-className=Student
-methodName=love
