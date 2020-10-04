@@ -34,3 +34,7 @@
     是局部内部类的一种特殊形式
 
 开发中的使用 demo5
+
+静态内部类 demo6
+    Outer.Inner oi = new Outer.Inner();
+    静态内部类不能访问外部类的非静态的变量和方法。
